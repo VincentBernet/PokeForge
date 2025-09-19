@@ -15,7 +15,10 @@ export const CARD_HEIGHT = 352;
 export const CARD_WIDTH = 252;
 
 export const PokemonSkeleton = () => (
-	<Skeleton className={`w-[${CARD_WIDTH}px] h-[${CARD_HEIGHT}px] rounded-md`} />
+	<Skeleton
+		className={'rounded-md'}
+		style={{ width: `${CARD_WIDTH}px`, height: `${CARD_HEIGHT}px` }}
+	/>
 );
 
 export const PokemonError = ({
@@ -49,7 +52,8 @@ const PokemonCard = ({ pokemonName }: Props) => {
 		<img
 			src={data.image}
 			alt={data.pokemonName}
-			className={`w-[${CARD_WIDTH}px] rounded-xs`}
+			className={'rounded-xs'}
+			style={{ width: `${CARD_WIDTH}px` }}
 		/>
 	);
 };

@@ -19,6 +19,15 @@ type Props = {
 	selectedPokemon: string;
 };
 
+const SKELETONS = [
+	'skeleton1',
+	'skeleton2',
+	'skeleton3',
+	'skeleton4',
+	'skeleton5',
+	'skeleton6',
+];
+
 const OpenAIContainer = ({ selectedPokemon }: Props) => {
 	const { data, isPending, isError, error } = useOpenAi(selectedPokemon);
 
@@ -28,9 +37,8 @@ const OpenAIContainer = ({ selectedPokemon }: Props) => {
 				<Card className="w-full max-w-[838px] text-justify">
 					<CardContent>
 						<div className="flex flex-wrap gap-4 font-bold text-lg">
-							{Array.from({ length: 6 }).map((_, index) => (
-								// biome-ignore lint/suspicious/noArrayIndexKey: <it's only for skeletons, not means to be dynamic>
-								<PokemonSkeleton key={index} />
+							{SKELETONS.map((e) => (
+								<PokemonSkeleton key={e} />
 							))}
 						</div>
 					</CardContent>

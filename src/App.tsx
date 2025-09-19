@@ -1,12 +1,4 @@
-import {
-	Select,
-	SelectContent,
-	SelectGroup,
-	SelectItem,
-	SelectLabel,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select';
+import TeamGeneratorPage from '@/features/team-generator/TeamGeneratorPage';
 
 const App = () => {
 	/**
@@ -17,31 +9,9 @@ const App = () => {
 	 * - Stream the response from openAI to display the team description as it's being generated.
 	 * - Use the PokeAPI to get the sprites of the Pokemon in the team.
 	 * - Display the team in a nice way.
+	 * import OpenAI from "openai";
 	 */
-	return (
-		<div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background p-4 pb-60 text-foreground">
-			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
-				PokeForge
-			</h1>
-			<div className="card">
-				<Select>
-					<SelectTrigger className="w-[180px]">
-						<SelectValue placeholder="Select a fruit" />
-					</SelectTrigger>
-					<SelectContent>
-						<SelectGroup>
-							<SelectLabel>First Generation</SelectLabel>
-							<SelectItem value="pikachu">Pikachu</SelectItem>
-							<SelectItem value="bulbasaur">Bulbasaur</SelectItem>
-							<SelectItem value="charmander">Charmander</SelectItem>
-							<SelectItem value="squirtle">Squirtle</SelectItem>
-							<SelectItem value="pidgey">Pidgey</SelectItem>
-						</SelectGroup>
-					</SelectContent>
-				</Select>
-			</div>
-		</div>
-	);
+	return <TeamGeneratorPage />;
 };
 
 export default App;

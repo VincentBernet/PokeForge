@@ -38,7 +38,6 @@ const OpenAIContainer = ({ selectedPokemon }: Props) => {
 				<Card className="w-full max-w-[838px] text-justify">
 					<CardContent>
 						<div className="flex flex-wrap gap-4 font-bold text-lg">
-							Test
 							{SKELETONS.map((e) => (
 								<PokemonSkeleton key={e} />
 							))}

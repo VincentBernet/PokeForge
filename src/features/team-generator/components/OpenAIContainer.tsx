@@ -30,6 +30,7 @@ const SKELETONS = [
 
 const OpenAIContainer = ({ selectedPokemon }: Props) => {
 	const { data, isPending, isError, error } = useOpenAi(selectedPokemon);
+	// Buggy as fuck, no squeletons, need to add header to TCG endpoint when fetching cards, need to understand why openAI change card
 
 	if (isPending) {
 		return (
@@ -37,6 +38,7 @@ const OpenAIContainer = ({ selectedPokemon }: Props) => {
 				<Card className="w-full max-w-[838px] text-justify">
 					<CardContent>
 						<div className="flex flex-wrap gap-4 font-bold text-lg">
+							Test
 							{SKELETONS.map((e) => (
 								<PokemonSkeleton key={e} />
 							))}

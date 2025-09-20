@@ -30,7 +30,7 @@ const SKELETONS = [
 
 const OpenAIContainer = ({ selectedPokemon }: Props) => {
 	const { data, isPending, isError, error } = useOpenAi(selectedPokemon);
-	// Buggy as fuck, no skeletons, need to add header to TCG endpoint when fetching cards, need to understand why openAI change card
+	// Need to add header to TCG endpoint when fetching cards, need to understand why openAI change card
 
 	if (isPending) {
 		return (

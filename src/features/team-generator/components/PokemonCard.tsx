@@ -30,12 +30,15 @@ export const PokemonError = ({
 }) => (
 	<Alert
 		variant="destructive"
-		className={`w-[${CARD_WIDTH}px] h-[${CARD_HEIGHT}px] rounded-md`}
+		className={'rounded-md'}
+		style={{ width: `${CARD_WIDTH}px`, height: `${CARD_HEIGHT}px` }}
 	>
 		<AlertCircleIcon />
 		<AlertTitle>Error on {pokemonName}</AlertTitle>
 		<AlertDescription>
-			<p>{error.message}</p>
+			<p>
+				{error.message} while fetching {pokemonName} cards
+			</p>
 		</AlertDescription>
 	</Alert>
 );

@@ -95,7 +95,7 @@ const getPokemonCards = async (
 	pokemonName: string,
 ): Promise<PokemonCardInfo> => {
 	const response = await axios.get<PokemonTCGResponse>(
-		`https://api.pokemontcg.io/v2/cards?q=name:${pokemonName}`,
+		`https://api.pokemontcg.io/v2/cards?q=name:"${pokemonName}"&pageSize=1&page=1&supertype:"Pokémon"`,
 		{
 			headers: {
 				'X-Api-Key': import.meta.env.VITE_POKEMON_TCG_API_KEY,
